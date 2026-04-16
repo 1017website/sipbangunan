@@ -1,29 +1,40 @@
 <?php
-
+// ============================================================
+// FILE: app/Models/Setting.php  (GANTI file lama)
+// ============================================================
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Cache;
 
 class Setting extends Model
 {
-    use HasFactory;
+    protected $fillable = ['key', 'value', 'group', 'label', 'type'];
 
-    protected $fillable = ['key', 'value', 'label', 'type', 'group'];
-
-    public static function get(string $key, $default = null)
+    // Helper cepat ambil nilai setting
+    public static function getValue(string $key, string $default = ''): string
     {
-        return static::where('key', $key)->value('value') ?? $default;
+        $setting = static::where('key', $key)->first();
+        return $setting ? (string)$setting->value : $default;
     }
 
-    public static function set(string $key, $value)
+    // Ambil semua settings sebagai key => value array
+    public static function allAsArray(): array
     {
-        return static::updateOrCreate(['key' => $key], ['value' => $value]);
+        return static::pluck('value', 'key')->toArray();
     }
 
-    public static function getAllGrouped(): array
+    // Ambil settings per group, format untuk view admin
+    public static function grouped(): array
     {
-        return static::all()->groupBy('group')->toArray();
+        return static::orderBy('group')->orderBy('id')
+            ->get()
+            ->groupBy('group')
+            ->map(fn($items) => $items->map(fn($s) => [
+                'key'   => $s->key,
+                'value' => $s->value,
+                'label' => $s->label ?? $s->key,
+                'type'  => $s->type ?? 'text',
+            ])->values()->toArray())
+            ->toArray();
     }
 }
