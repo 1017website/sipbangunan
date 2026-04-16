@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SettingController;
+use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 
 // Frontend
@@ -43,6 +44,9 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::resource('categories', CategoryController::class)->except('show');
     Route::resource('products', ProductController::class)->except('show');
 
+    // users - tanpa ->names() karena prefix sudah handle nama
+    Route::resource('users', UserController::class)->except('show');
+
     Route::get('settings', [SettingController::class, 'index'])->name('settings.index');
-    Route::post('settings', [SettingController::class, 'update'])->name('settings.update');
+    Route::put('settings', [SettingController::class, 'update'])->name('settings.update');
 });
