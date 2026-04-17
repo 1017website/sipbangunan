@@ -85,6 +85,8 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);overfl
 /* NAVBAR */
 .navbar{position:fixed;top:0;left:0;right:0;z-index:1000;height:64px;background:rgba(255,255,255,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--faint);display:flex;align-items:center;padding:0 max(24px,4vw);gap:32px;transition:box-shadow .25s;}
 .navbar.shadow{box-shadow:0 1px 16px rgba(0,0,0,.07);}
+.nav-logo-img{height:36px;width:auto;display:block;object-fit:contain;}
+.footer-logo-img{height:40px;width:auto;display:block;object-fit:contain;margin-bottom:12px;}
 .nav-logo{display:flex;align-items:center;gap:10px;cursor:pointer;text-decoration:none;flex-shrink:0;}
 .nav-logo-txt .brand{font-size:.95rem;font-weight:800;color:var(--ink);letter-spacing:-.3px;}
 .nav-logo-txt .sub{font-size:.58rem;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;font-weight:500;}
@@ -348,10 +350,7 @@ fbq('init','{{ $settings['meta_pixel_id'] }}');fbq('track','PageView');
 
 <nav class="navbar" id="navbar">
     <a href="{{ route('home') }}" class="nav-logo">
-        <div class="nav-logo-txt">
-            <div class="brand">{{ $settings['site_name'] ?? 'SIP Bangunan' }}</div>
-            <div class="sub">Supplier Bahan Bangunan</div>
-        </div>
+        <img src="/images/logo.png" alt="{{ $settings['site_name'] ?? 'SIP Bangunan' }}" class="nav-logo-img">
     </a>
     <ul class="nav-links">
         <li><a href="{{ route('home') }}">Beranda</a></li>
@@ -372,7 +371,7 @@ fbq('init','{{ $settings['meta_pixel_id'] }}');fbq('track','PageView');
 <footer>
     <div class="footer-inner">
         <div class="fb">
-            <div class="site-brand">{{ $settings['site_name'] ?? 'SIP' }} <span>Bangunan</span></div>
+            <img src="/images/logo-footer.png" alt="{{ $settings['site_name'] ?? 'SIP Bangunan' }}" class="footer-logo-img">
             <p>{{ $settings['site_description'] ?? 'Supplier bahan bangunan lengkap & terpercaya.' }}</p>
         </div>
         <div>

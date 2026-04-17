@@ -43,7 +43,7 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--bg);color:
   flex-shrink:0;
 }
 .sidebar-brand .brand-name{font-size:1rem;font-weight:800;color:#fff;letter-spacing:-.3px;}
-.sidebar-brand .brand-sub{font-size:.6rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:1px;}
+.sidebar-brand .brand-sub{font-size:.6rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(250, 250, 250);margin-top:1px;}
 .sidebar-nav{padding:12px 10px;flex:1;}
 .nav-section-label{font-size:.58rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.25);padding:8px 10px 4px;margin-top:8px;}
 .nav-section-label:first-child{margin-top:0;}
@@ -206,6 +206,7 @@ select.form-control{cursor:pointer;}
   table{font-size:.76rem;}
   thead th,tbody td{padding:8px 10px;}
 }
+.footer-logo-img{height:35px;width:auto;display:block;object-fit:contain;margin-bottom:12px;}
 </style>
 </head>
 <body>
@@ -216,7 +217,7 @@ select.form-control{cursor:pointer;}
 {{-- SIDEBAR --}}
 <aside class="sidebar" id="sidebar">
     <div class="sidebar-brand">
-        <div class="brand-name">{{ config('app.name', 'SIP Bangunan') }}</div>
+        <img src="/images/logo-footer.png" alt="{{ $settings['site_name'] ?? 'SIP Bangunan' }}" class="footer-logo-img">
         <div class="brand-sub">Admin CMS</div>
     </div>
 
