@@ -17,6 +17,7 @@
     $currentUrl     = request()->fullUrl();
 @endphp
 
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
 <title>@yield('seo_title', $seoTitle)</title>
 <meta name="description" content="@yield('seo_desc', $seoDesc)">
 @if($seoKeywords)
