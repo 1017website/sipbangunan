@@ -253,7 +253,9 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);overfl
 .prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-bottom:40px;}
 .pcard{background:var(--white);border:1px solid var(--faint);border-radius:var(--radius);overflow:hidden;cursor:pointer;display:flex;flex-direction:column;transition:all .22s cubic-bezier(.34,1.3,.64,1);text-decoration:none;color:inherit;}
 .pcard:hover{border-color:var(--y);box-shadow:0 8px 28px rgba(251,191,0,.12);transform:translateY(-3px);}
-.pcard-thumb{height:150px;background:linear-gradient(135deg,var(--y4) 0%,var(--y3) 100%);display:flex;align-items:center;justify-content:center;font-size:3.5rem;position:relative;}
+.pcard-thumb{height:150px;background:linear-gradient(135deg,var(--y4) 0%,var(--y3) 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.pcard-thumb .pcard-icon{font-size:2.2rem;opacity:.7;position:relative;z-index:1;}
+.pcard-spec-tag{position:absolute;bottom:8px;left:8px;background:rgba(255,255,255,.9);border-radius:5px;font-size:.62rem;font-weight:700;padding:3px 8px;color:var(--ink3);z-index:2;}
 .pcard-thumb img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
 .pcard-body{padding:14px 16px 16px;flex:1;display:flex;flex-direction:column;}
 .pcard-name{font-size:.88rem;font-weight:700;color:var(--ink);line-height:1.3;margin-bottom:5px;}

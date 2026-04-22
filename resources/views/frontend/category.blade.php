@@ -36,7 +36,7 @@
                     @if($product->image)
                         <img src="{{ $product->image_url }}" alt="{{ $product->name }}">
                     @else
-                        {{ $product->icon }}
+                        <span class="pcard-icon">{{ $product->icon }}</span>
                     @endif
                     @if($product->spec)
                     <div class="pcard-spec-tag">{{ $product->spec }}</div>
