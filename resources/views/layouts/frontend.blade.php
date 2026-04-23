@@ -226,8 +226,14 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);overfl
 .wa-cta:hover{background:#1ebe5d;}
 .wa-cta svg{width:16px;height:16px;fill:currentColor;}
 .soc-row{display:flex;gap:7px;flex-wrap:wrap;}
-.soc-btn{font-size:.72rem;font-weight:700;padding:8px 14px;border-radius:var(--radius-sm);border:1px solid var(--faint);background:var(--bg);color:var(--ink);text-decoration:none;transition:all .18s;}
-.soc-btn:hover{border-color:var(--y);background:var(--y4);}
+.soc-btn{display:inline-flex;align-items:center;gap:6px;font-size:.75rem;font-weight:700;padding:8px 14px;border-radius:var(--radius-sm);border:1.5px solid var(--faint);background:var(--white);color:var(--ink);text-decoration:none;transition:all .18s;white-space:nowrap;}
+.soc-btn:hover{transform:translateY(-1px);box-shadow:0 3px 10px rgba(0,0,0,.08);}
+.soc-btn svg{flex-shrink:0;}
+.soc-btn-tokped{border-color:#42B549;color:#42B549;}.soc-btn-tokped:hover{background:#F0FFF1;}
+.soc-btn-shopee{border-color:#EE4D2D;color:#EE4D2D;}.soc-btn-shopee:hover{background:#FFF5F3;}
+.soc-btn-tiktok{border-color:#000;color:#000;}.soc-btn-tiktok:hover{background:#F5F5F5;}
+.soc-btn-fb{border-color:#1877F2;color:#1877F2;}.soc-btn-fb:hover{background:#F0F6FF;}
+.soc-btn-ig{border-color:#C13584;color:#C13584;}.soc-btn-ig:hover{background:#FFF0F8;}
 .map-card{border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--faint);}
 .map-card iframe{width:100%;height:100%;min-height:340px;display:block;}
 
