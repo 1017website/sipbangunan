@@ -127,7 +127,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);overfl
   opacity:var(--banner-opacity, 0.5);
 }
 /* Responsive: ganti ke banner mobile di layar kecil */
-@@media(max-width:768px){
+@media(max-width:768px){
   .hero.has-banner-mobile::before{
     background-image:var(--banner-mobile-url) !important;
   }
@@ -138,7 +138,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);overfl
   display:grid;grid-template-columns:1fr auto;gap:48px;
   align-items:flex-end;
   position:relative;z-index:1;
-  margin-top: 253px;
+  margin-top: 34px;
 }
 .hero-label{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--y2);margin-bottom:16px;}
 .hero-label::before{content:'';width:20px;height:2px;background:var(--y);border-radius:2px;}
@@ -151,7 +151,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);overfl
 .btn-dark:hover{background:var(--ink2);transform:translateY(-1px);}
 .btn-outline{background:transparent;color:var(--ink);font-size:.82rem;font-weight:600;padding:12px 22px;border-radius:var(--radius-sm);border:1.5px solid var(--faint);cursor:pointer;transition:all .2s;text-decoration:none;display:inline-flex;align-items:center;gap:7px;}
 .btn-outline:hover{border-color:var(--y);background:var(--y4);}
-.hero-stats-bar{background:var(--y);padding:16px max(24px,4vw);display:flex;align-items:center;gap:0;margin-top:32px;position:relative;z-index:1;}
+.hero-stats-bar{background:var(--y);padding:16px max(24px,4vw);display:flex;align-items:center;gap:0;margin-top:82px;position:relative;z-index:1;}
 .hstat{flex:1;text-align:center;padding:0 20px;border-right:1px solid rgba(0,0,0,.1);}
 .hstat:last-child{border-right:none;}
 .hstat-n{font-size:1.5rem;font-weight:800;color:var(--ink);letter-spacing:-1px;line-height:1;}
@@ -326,12 +326,12 @@ footer{background:var(--ink2);border-top:3px solid var(--y);}
 .wa-float{position:fixed;bottom:24px;right:24px;z-index:999;width:52px;height:52px;border-radius:14px;background:#25D366;color:var(--white);display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:all .22s;animation:wf 2.5s ease-in-out infinite;}
 .wa-float:hover{transform:scale(1.08);}
 .wa-float svg{width:24px;height:24px;fill:currentColor;}
-@@keyframes wf{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes wf{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
 
 /* RESPONSIVE */
-@@media(max-width:1100px){.cat-grid-home{grid-template-columns:repeat(2,1fr);}.footer-inner{grid-template-columns:1fr 1fr;}.fb{grid-column:1/-1;}}
-@@media(max-width:900px){.hero-inner{grid-template-columns:1fr;}.about-strip{grid-template-columns:1fr;gap:28px;}.as-right{grid-template-columns:repeat(3,1fr);}.contact-grid{grid-template-columns:1fr;}.detail-layout{grid-template-columns:1fr;}.d-img-panel{display:none;}.why-row{grid-template-columns:1fr 1fr;}.nav-links{display:none;}.nav-ham{display:block;}}
-@@media(max-width:600px){.cat-grid-home,.why-row,.as-right{grid-template-columns:1fr;}.hero-stats-bar{flex-wrap:wrap;gap:0;}.hstat{min-width:50%;}.footer-inner{grid-template-columns:1fr;gap:28px;}.footer-btm{flex-direction:column;gap:4px;text-align:center;}}
+@media(max-width:1100px){.cat-grid-home{grid-template-columns:repeat(2,1fr);}.footer-inner{grid-template-columns:1fr 1fr;}.fb{grid-column:1/-1;}}
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr;}.about-strip{grid-template-columns:1fr;gap:28px;}.as-right{grid-template-columns:repeat(3,1fr);}.contact-grid{grid-template-columns:1fr;}.detail-layout{grid-template-columns:1fr;}.d-img-panel{display:none;}.why-row{grid-template-columns:1fr 1fr;}.nav-links{display:none;}.nav-ham{display:block;}}
+@media(max-width:600px){.cat-grid-home,.why-row,.as-right{grid-template-columns:1fr;}.hero-stats-bar{flex-wrap:wrap;gap:0;}.hstat{min-width:50%;}.footer-inner{grid-template-columns:1fr;gap:28px;}.footer-btm{flex-direction:column;gap:4px;text-align:center;}}
 </style>
 
 {{-- Google Tag Manager --}}
