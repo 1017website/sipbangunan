@@ -127,11 +127,6 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);overfl
   opacity:var(--banner-opacity, 0.5);
 }
 /* Responsive: ganti ke banner mobile di layar kecil */
-@media(max-width:768px){
-  .hero.has-banner-mobile::before{
-    background-image:var(--banner-mobile-url) !important;
-  }
-}
 .hero-inner{
   max-width:1280px;margin:0 auto;
   padding:56px max(24px,4vw) 0;
