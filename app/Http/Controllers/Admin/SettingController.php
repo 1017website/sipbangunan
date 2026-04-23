@@ -1,7 +1,4 @@
 <?php
-// ============================================================
-// FILE: app/Http/Controllers/Admin/SettingController.php  (GANTI)
-// ============================================================
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
@@ -13,7 +10,8 @@ class SettingController extends Controller
 {
     public function index()
     {
-        $settings = Setting::grouped();
+        // View butuh flat ['key' => 'value'], bukan grouped
+        $settings = Setting::allAsArray();
         return view('admin.settings.index', compact('settings'));
     }
 
@@ -21,42 +19,29 @@ class SettingController extends Controller
     {
         $imageFields = ['banner_desktop', 'banner_mobile', 'og_image'];
 
-        foreach ($request->except(['_token']) as $key => $value) {
+        // Simpan field teks
+        foreach ($request->except(['_token', '_method']) as $key => $value) {
+            if (in_array($key, $imageFields)) continue;
             if (is_array($value)) continue;
-
-            Setting::updateOrCreate(
-                ['key' => $key],
-                ['value' => $value ?? '']
-            );
+            Setting::updateOrCreate(['key' => $key], ['value' => $value ?? '']);
         }
 
-        // Handle image uploads untuk banner & og_image
+        // Handle upload gambar
         foreach ($imageFields as $field) {
-            if ($request->hasFile($field)) {
-                $file = $request->file($field);
-
-                // Validasi
-                $file->validate(['mimes:jpg,jpeg,png,webp', 'max:5120']);
-
-                // Hapus file lama jika ada
+            if ($request->hasFile($field) && $request->file($field)->isValid()) {
                 $old = Setting::getValue($field);
                 if ($old && Storage::disk('public')->exists($old)) {
                     Storage::disk('public')->delete($old);
                 }
 
-                // Simpan file baru
                 $folder = match($field) {
                     'banner_desktop' => 'banners/desktop',
                     'banner_mobile'  => 'banners/mobile',
                     default          => 'seo',
                 };
 
-                $path = $file->store($folder, 'public');
-
-                Setting::updateOrCreate(
-                    ['key' => $field],
-                    ['value' => $path]
-                );
+                $path = $request->file($field)->store($folder, 'public');
+                Setting::updateOrCreate(['key' => $field], ['value' => $path]);
             }
         }
 
