@@ -394,6 +394,8 @@ fbq('init','{{ $settings['meta_pixel_id'] }}');fbq('track','PageView');
                 @if(!empty($settings['tokped_url']))<li><a href="{{ $settings['tokped_url'] }}" target="_blank">Tokopedia</a></li>@endif
                 @if(!empty($settings['shopee_url']))<li><a href="{{ $settings['shopee_url'] }}" target="_blank">Shopee</a></li>@endif
                 @if(!empty($settings['tiktok_url']))<li><a href="{{ $settings['tiktok_url'] }}" target="_blank">TikTok Shop</a></li>@endif
+                @if(!empty($settings['facebook_url']))<li><a href="{{ $settings['facebook_url'] }}" target="_blank">Facebook</a></li>@endif
+                @if(!empty($settings['instagram_url']))<li><a href="{{ $settings['instagram_url'] }}" target="_blank">Instagram</a></li>@endif
             </ul>
         </div>
     </div>
