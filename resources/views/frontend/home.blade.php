@@ -261,31 +261,31 @@ $heroClasses = 'hero' . ($hasBanner ? ' has-banner' : '') . ($bannerMobile ? ' h
                     <div class="soc-row">
                         @if(!empty($settings['tokped_url']))
                         <a href="{{ $settings['tokped_url'] }}" target="_blank" class="soc-btn soc-btn-tokped">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#42B549"/><path d="M7 8h10M7 12h6M7 16h8" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Tokopedialogo.svg/1200px-Tokopedialogo.svg.png" height="16" style="object-fit:contain;">
                             Tokopedia
                         </a>
                         @endif
                         @if(!empty($settings['shopee_url']))
                         <a href="{{ $settings['shopee_url'] }}" target="_blank" class="soc-btn soc-btn-shopee">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 8h14l-1.5 10a1 1 0 01-1 .9H7.5a1 1 0 01-1-.9L5 8z" fill="#EE4D2D"/><path d="M9 8V6a3 3 0 016 0v2" stroke="#EE4D2D" stroke-width="1.5" fill="none"/><circle cx="9.5" cy="15" r="1" fill="#fff"/><circle cx="14.5" cy="15" r="1" fill="#fff"/></svg>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Shopee.svg/1200px-Shopee.svg.png" height="16" style="object-fit:contain;">
                             Shopee
                         </a>
                         @endif
                         @if(!empty($settings['tiktok_url']))
                         <a href="{{ $settings['tiktok_url'] }}" target="_blank" class="soc-btn soc-btn-tiktok">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="#000"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/></svg>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Ionicons_logo-tiktok.svg/1200px-Ionicons_logo-tiktok.svg.png" height="16" style="object-fit:contain;">
                             TikTok
                         </a>
                         @endif
                         @if(!empty($settings['facebook_url']))
                         <a href="{{ $settings['facebook_url'] }}" target="_blank" class="soc-btn soc-btn-fb">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.235 2.686.235v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.27h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1200px-Facebook_Logo_%282019%29.png" height="16" style="object-fit:contain;">
                             Facebook
                         </a>
                         @endif
                         @if(!empty($settings['instagram_url']))
                         <a href="{{ $settings['instagram_url'] }}" target="_blank" class="soc-btn soc-btn-ig">
-                            <svg width="15" height="15" viewBox="0 0 24 24"><defs><linearGradient id="iggrad" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#F58529"/><stop offset="50%" stop-color="#DD2A7B"/><stop offset="100%" stop-color="#8134AF"/></linearGradient></defs><path fill="url(#iggrad)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1200px-Instagram_icon.png" height="16" style="object-fit:contain;">
                             Instagram
                         </a>
                         @endif
