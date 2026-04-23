@@ -262,12 +262,22 @@ $heroClasses = 'hero' . ($hasBanner ? ' has-banner' : '') . ($bannerMobile ? ' h
                     </div>
                 </div>
             </div>
-            @if(!empty($settings['maps_embed']))
-            <div class="map-card">
-                @php $mapsUrl = trim($settings['maps_embed'], '"\''); @endphp
-                <iframe src="{{ $mapsUrl }}" allowfullscreen loading="lazy" title="Lokasi {{ $settings['site_name'] ?? 'SIP Bangunan' }}"></iframe>
-            </div>
-            @endif
+                @if(!empty($settings['maps_embed']))
+                <div class="map-card">
+                    @php
+                        $mapsRaw = $settings['maps_embed'] ?? '';
+                        if (str_contains($mapsRaw, '<iframe')) {
+                            preg_match('/src=["\'"]([^"\']+)["\']/', $mapsRaw, $m);
+                            $mapsUrl = $m[1] ?? '';
+                        } else {
+                            $mapsUrl = trim($mapsRaw, '"\'');
+                        }
+                    @endphp
+                    @if($mapsUrl)
+                    <iframe src="{{ $mapsUrl }}" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Lokasi {{ $settings['site_name'] ?? 'SIP Bangunan' }}"></iframe>
+                    @endif
+                </div>
+                @endif
         </div>
     </section>
 
