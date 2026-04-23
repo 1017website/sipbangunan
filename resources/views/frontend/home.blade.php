@@ -261,31 +261,31 @@ $heroClasses = 'hero' . ($hasBanner ? ' has-banner' : '') . ($bannerMobile ? ' h
                     <div class="soc-row">
                         @if(!empty($settings['tokped_url']))
                         <a href="{{ $settings['tokped_url'] }}" target="_blank" class="soc-btn soc-btn-tokped">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Tokopedialogo.svg/1200px-Tokopedialogo.svg.png" height="16" style="object-fit:contain;">
+                            <img src="https://www.google.com/s2/favicons?domain=tokopedia.com&sz=32" width="18" height="18">
                             Tokopedia
                         </a>
                         @endif
                         @if(!empty($settings['shopee_url']))
                         <a href="{{ $settings['shopee_url'] }}" target="_blank" class="soc-btn soc-btn-shopee">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Shopee.svg/1200px-Shopee.svg.png" height="16" style="object-fit:contain;">
+                            <img src="https://www.google.com/s2/favicons?domain=shopee.co.id&sz=32" width="18" height="18">
                             Shopee
                         </a>
                         @endif
                         @if(!empty($settings['tiktok_url']))
                         <a href="{{ $settings['tiktok_url'] }}" target="_blank" class="soc-btn soc-btn-tiktok">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Ionicons_logo-tiktok.svg/1200px-Ionicons_logo-tiktok.svg.png" height="16" style="object-fit:contain;">
+                            <img src="https://www.google.com/s2/favicons?domain=tiktok.com&sz=32" width="18" height="18">
                             TikTok
                         </a>
                         @endif
                         @if(!empty($settings['facebook_url']))
                         <a href="{{ $settings['facebook_url'] }}" target="_blank" class="soc-btn soc-btn-fb">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1200px-Facebook_Logo_%282019%29.png" height="16" style="object-fit:contain;">
+                            <img src="https://www.google.com/s2/favicons?domain=facebook.com&sz=32" width="18" height="18">
                             Facebook
                         </a>
                         @endif
                         @if(!empty($settings['instagram_url']))
                         <a href="{{ $settings['instagram_url'] }}" target="_blank" class="soc-btn soc-btn-ig">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1200px-Instagram_icon.png" height="16" style="object-fit:contain;">
+                            <img src="https://www.google.com/s2/favicons?domain=instagram.com&sz=32" width="18" height="18">
                             Instagram
                         </a>
                         @endif
