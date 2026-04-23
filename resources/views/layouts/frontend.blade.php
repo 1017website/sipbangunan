@@ -151,7 +151,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);overfl
 .btn-dark:hover{background:var(--ink2);transform:translateY(-1px);}
 .btn-outline{background:transparent;color:var(--ink);font-size:.82rem;font-weight:600;padding:12px 22px;border-radius:var(--radius-sm);border:1.5px solid var(--faint);cursor:pointer;transition:all .2s;text-decoration:none;display:inline-flex;align-items:center;gap:7px;}
 .btn-outline:hover{border-color:var(--y);background:var(--y4);}
-.hero-stats-bar{background:var(--y);padding:16px max(24px,4vw);display:flex;align-items:center;gap:0;margin-top:285px;position:relative;z-index:1;}
+.hero-stats-bar{background:var(--y);padding:16px max(24px,4vw);display:flex;align-items:center;gap:0;margin-top:32px;position:relative;z-index:1;}
 .hstat{flex:1;text-align:center;padding:0 20px;border-right:1px solid rgba(0,0,0,.1);}
 .hstat:last-child{border-right:none;}
 .hstat-n{font-size:1.5rem;font-weight:800;color:var(--ink);letter-spacing:-1px;line-height:1;}
