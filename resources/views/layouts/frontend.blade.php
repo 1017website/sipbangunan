@@ -108,7 +108,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);overfl
   /* Banner diatur via inline style dari PHP/Blade */
   position:relative;
   overflow:hidden;
-  min-height:600px;
+  min-height:650px;
 }
 /* Overlay / ::before untuk banner */
 .hero::before{
