@@ -51,6 +51,24 @@ $heroClasses = 'hero' . ($hasBanner ? ' has-banner' : '') . ($bannerMobile ? ' h
         </div>
     </div>
 
+    <div class="hero-stats-bar">
+        <div class="hstat">
+            <div class="hstat-n">{{ $settings['stat_categories'] ?? '8+' }}</div>
+            <div class="hstat-l">Kategori</div>
+        </div>
+        <div class="hstat">
+            <div class="hstat-n">{{ $settings['stat_products'] ?? '100+' }}</div>
+            <div class="hstat-l">Produk</div>
+        </div>
+        <div class="hstat">
+            <div class="hstat-n">{{ $settings['stat_years'] ?? '10+' }}</div>
+            <div class="hstat-l">Tahun</div>
+        </div>
+        <div class="hstat">
+            <div class="hstat-n">{{ $settings['stat_customers'] ?? '1K+' }}</div>
+            <div class="hstat-l">Pelanggan</div>
+        </div>
+    </div>
 </div>
 
 {{-- TICKER --}}
