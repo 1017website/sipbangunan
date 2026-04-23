@@ -68,8 +68,31 @@
         </tbody>
     </table>
     @if($products->hasPages())
-    <div style="padding:16px 20px;border-top:1px solid #E5E7EB;display:flex;gap:6px;">
-        {{ $products->appends(request()->query())->links() }}
+    <div style="padding:16px 20px;border-top:1px solid var(--faint);display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+        <div style="font-size:.75rem;color:var(--muted);">
+            Menampilkan {{ $products->firstItem() }}–{{ $products->lastItem() }} dari {{ $products->total() }} produk
+        </div>
+        <div style="display:flex;gap:4px;">
+            @if($products->onFirstPage())
+                <span style="padding:6px 12px;border:1px solid var(--faint);border-radius:7px;font-size:.78rem;color:var(--muted);opacity:.4;">← Prev</span>
+            @else
+                <a href="{{ $products->previousPageUrl() }}" style="padding:6px 12px;border:1px solid var(--faint);border-radius:7px;font-size:.78rem;color:var(--ink);text-decoration:none;transition:all .15s;" onmouseover="this.style.borderColor='var(--y)'" onmouseout="this.style.borderColor='var(--faint)'">← Prev</a>
+            @endif
+
+            @foreach($products->getUrlRange(1, $products->lastPage()) as $page => $url)
+                @if($page == $products->currentPage())
+                    <span style="padding:6px 12px;border:1px solid var(--y);border-radius:7px;font-size:.78rem;font-weight:700;background:var(--y);color:var(--ink);">{{ $page }}</span>
+                @else
+                    <a href="{{ $url }}" style="padding:6px 12px;border:1px solid var(--faint);border-radius:7px;font-size:.78rem;color:var(--ink);text-decoration:none;transition:all .15s;" onmouseover="this.style.borderColor='var(--y)'" onmouseout="this.style.borderColor='var(--faint)'">{{ $page }}</a>
+                @endif
+            @endforeach
+
+            @if($products->hasMorePages())
+                <a href="{{ $products->nextPageUrl() }}" style="padding:6px 12px;border:1px solid var(--faint);border-radius:7px;font-size:.78rem;color:var(--ink);text-decoration:none;transition:all .15s;" onmouseover="this.style.borderColor='var(--y)'" onmouseout="this.style.borderColor='var(--faint)'">Next →</a>
+            @else
+                <span style="padding:6px 12px;border:1px solid var(--faint);border-radius:7px;font-size:.78rem;color:var(--muted);opacity:.4;">Next →</span>
+            @endif
+        </div>
     </div>
     @endif
 </div>

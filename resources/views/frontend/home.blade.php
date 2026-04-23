@@ -17,32 +17,17 @@ $heroClasses = 'hero' . ($hasBanner ? ' has-banner' : '') . ($bannerMobile ? ' h
 
 @if($hasBanner)
 <style>
-    .hero.has-banner::before {
-        background-image: url('{{ $bannerDesktop ?? $bannerMobile }}');
-
-        background-position: {
-                {
-                $bannerPos
-            }
-        }
-
-        ;
-        background-size: cover;
-
-        opacity: {
-                {
-                $bannerOpacity
-            }
-        }
-
-        ;
+.hero.has-banner::before {
+    background-image: url('{{ $bannerDesktop ?? $bannerMobile }}');
+    background-position: {{ $bannerPos }};
+    background-size: cover;
+    opacity: {{ $bannerOpacity }};
+}
+@@media(max-width: 768px) {
+    .hero.has-banner-mobile::before {
+        background-image: url('{{ $bannerMobile ?? $bannerDesktop }}');
     }
-
-    @media(max-width: 768px) {
-        .hero.has-banner-mobile::before {
-            background-image: url('{{ $bannerMobile ?? $bannerDesktop }}');
-        }
-    }
+}
 </style>
 @endif
 
@@ -279,7 +264,8 @@ $heroClasses = 'hero' . ($hasBanner ? ' has-banner' : '') . ($bannerMobile ? ' h
             </div>
             @if(!empty($settings['maps_embed']))
             <div class="map-card">
-                <iframe src="{{ $settings['maps_embed'] }}" allowfullscreen loading="lazy" title="Lokasi {{ $settings['site_name'] ?? 'SIP Bangunan' }}"></iframe>
+                @php $mapsUrl = trim($settings['maps_embed'], '"\''); @endphp
+                <iframe src="{{ $mapsUrl }}" allowfullscreen loading="lazy" title="Lokasi {{ $settings['site_name'] ?? 'SIP Bangunan' }}"></iframe>
             </div>
             @endif
         </div>

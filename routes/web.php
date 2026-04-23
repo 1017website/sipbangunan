@@ -15,12 +15,16 @@ Route::get('/produk/{category}/{product}', [HomeController::class, 'product'])->
 
 // Admin Auth
 Route::get('/admin/login', function () {
+    // Fix 5: jika sudah login, redirect ke dashboard
+    if (auth()->check()) {
+        return redirect()->route('admin.dashboard');
+    }
     return view('admin.auth.login');
-})->name('admin.login')->middleware('guest');
+})->name('admin.login');
 
 Route::post('/admin/login', function (\Illuminate\Http\Request $request) {
     $credentials = $request->validate([
-        'email' => 'required|email',
+        'email'    => 'required|email',
         'password' => 'required',
     ]);
     if (\Illuminate\Support\Facades\Auth::attempt($credentials, $request->boolean('remember'))) {
@@ -37,14 +41,12 @@ Route::post('/admin/logout', function (\Illuminate\Http\Request $request) {
     return redirect()->route('admin.login');
 })->name('admin.logout');
 
-// Admin Panel
+// Admin Panel — Fix 6: session habis -> redirect ke admin.login (bukan /login default Laravel)
 Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::resource('categories', CategoryController::class)->except('show');
     Route::resource('products', ProductController::class)->except('show');
-
-    // users - tanpa ->names() karena prefix sudah handle nama
     Route::resource('users', UserController::class)->except('show');
 
     Route::get('settings', [SettingController::class, 'index'])->name('settings.index');
