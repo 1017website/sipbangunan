@@ -26,6 +26,9 @@ $heroClasses = 'hero' . ($hasBanner ? ' has-banner' : '') . ($bannerMobile ? ' h
 @@media(max-width: 768px) {
     .hero.has-banner-mobile::before {
         background-image: url('{{ $bannerMobile ?? $bannerDesktop }}');
+        background-position: {{ $bannerPos }};
+        background-size: cover;
+        opacity: {{ $bannerOpacity }};
     }
 }
 </style>
@@ -259,6 +262,8 @@ $heroClasses = 'hero' . ($hasBanner ? ' has-banner' : '') . ($bannerMobile ? ' h
                         @if(!empty($settings['tokped_url']))<a href="{{ $settings['tokped_url'] }}" target="_blank" class="soc-btn">🛒 Tokopedia</a>@endif
                         @if(!empty($settings['shopee_url']))<a href="{{ $settings['shopee_url'] }}" target="_blank" class="soc-btn">🛍 Shopee</a>@endif
                         @if(!empty($settings['tiktok_url']))<a href="{{ $settings['tiktok_url'] }}" target="_blank" class="soc-btn">▶ TikTok</a>@endif
+                        @if(!empty($settings['facebook_url']))<a href="{{ $settings['facebook_url'] }}" target="_blank" class="soc-btn">📘 Facebook</a>@endif
+                        @if(!empty($settings['instagram_url']))<a href="{{ $settings['instagram_url'] }}" target="_blank" class="soc-btn">📷 Instagram</a>@endif
                     </div>
                 </div>
             </div>

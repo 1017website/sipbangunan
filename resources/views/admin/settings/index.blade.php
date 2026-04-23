@@ -23,7 +23,9 @@
     {{-- ===== UMUM ===== --}}
     <div class="section-group active" id="tab-umum">
         <div class="card">
-            <div class="card-header"><div class="card-title">🏠 Informasi Umum</div></div>
+            <div class="card-header">
+                <div class="card-title">🏠 Informasi Umum</div>
+            </div>
             <div class="card-body">
                 <div class="form-group">
                     <label class="form-label">Nama Website</label>
@@ -51,7 +53,9 @@
     {{-- ===== KONTAK ===== --}}
     <div class="section-group" id="tab-kontak">
         <div class="card">
-            <div class="card-header"><div class="card-title">📞 Informasi Kontak</div></div>
+            <div class="card-header">
+                <div class="card-title">📞 Informasi Kontak</div>
+            </div>
             <div class="card-body">
                 <div class="form-group">
                     <label class="form-label">Alamat</label>
@@ -81,13 +85,15 @@
     {{-- ===== HERO ===== --}}
     <div class="section-group" id="tab-hero">
         <div class="card">
-            <div class="card-header"><div class="card-title">🖼️ Banner Hero</div></div>
+            <div class="card-header">
+                <div class="card-title">🖼️ Banner Hero</div>
+            </div>
             <div class="card-body">
                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;" class="banner-grid">
                     <div class="form-group">
                         <label class="form-label">Banner Desktop</label>
                         @if(!empty($settings['banner_desktop']))
-                            <img src="{{ Storage::url($settings['banner_desktop']) }}" style="width:100%;height:80px;object-fit:cover;border-radius:8px;margin-bottom:8px;border:1px solid var(--faint);">
+                        <img src="{{ Storage::url($settings['banner_desktop']) }}" style="width:100%;height:80px;object-fit:cover;border-radius:8px;margin-bottom:8px;border:1px solid var(--faint);">
                         @endif
                         <input type="file" name="banner_desktop" class="form-control" accept="image/*">
                         <div style="font-size:.72rem;color:var(--muted);margin-top:4px;">Landscape, min 1200×400px</div>
@@ -95,7 +101,7 @@
                     <div class="form-group">
                         <label class="form-label">Banner Mobile</label>
                         @if(!empty($settings['banner_mobile']))
-                            <img src="{{ Storage::url($settings['banner_mobile']) }}" style="width:100%;height:80px;object-fit:cover;border-radius:8px;margin-bottom:8px;border:1px solid var(--faint);">
+                        <img src="{{ Storage::url($settings['banner_mobile']) }}" style="width:100%;height:80px;object-fit:cover;border-radius:8px;margin-bottom:8px;border:1px solid var(--faint);">
                         @endif
                         <input type="file" name="banner_mobile" class="form-control" accept="image/*">
                         <div style="font-size:.72rem;color:var(--muted);margin-top:4px;">Portrait, max 768px wide</div>
@@ -142,7 +148,9 @@
     {{-- ===== SEO ===== --}}
     <div class="section-group" id="tab-seo">
         <div class="card">
-            <div class="card-header"><div class="card-title">🔍 SEO & Meta Tags</div></div>
+            <div class="card-header">
+                <div class="card-title">🔍 SEO & Meta Tags</div>
+            </div>
             <div class="card-body">
                 <div class="form-group">
                     <label class="form-label">SEO Title <span style="color:var(--muted);font-weight:400;">(maks 60 karakter)</span></label>
@@ -159,7 +167,7 @@
                 <div class="form-group">
                     <label class="form-label">OG Image <span style="color:var(--muted);font-weight:400;">(1200×630px, untuk share sosmed)</span></label>
                     @if(!empty($settings['og_image']))
-                        <img src="{{ Storage::url($settings['og_image']) }}" style="width:100%;max-width:300px;height:80px;object-fit:cover;border-radius:8px;margin-bottom:8px;display:block;border:1px solid var(--faint);">
+                    <img src="{{ Storage::url($settings['og_image']) }}" style="width:100%;max-width:300px;height:80px;object-fit:cover;border-radius:8px;margin-bottom:8px;display:block;border:1px solid var(--faint);">
                     @endif
                     <input type="file" name="og_image" class="form-control" accept="image/*">
                 </div>
@@ -170,7 +178,9 @@
     {{-- ===== PIXEL & GTM ===== --}}
     <div class="section-group" id="tab-pixel">
         <div class="card">
-            <div class="card-header"><div class="card-title">📊 Meta Pixel & Google Tag Manager</div></div>
+            <div class="card-header">
+                <div class="card-title">📊 Meta Pixel & Google Tag Manager</div>
+            </div>
             <div class="card-body">
                 <div style="background:var(--bg);border-radius:8px;padding:14px;margin-bottom:20px;font-size:.8rem;color:var(--muted);line-height:1.6;">
                     💡 Isi salah satu atau keduanya. Kode akan otomatis diinjeksi ke semua halaman website.
@@ -182,13 +192,13 @@
                         <span style="font-weight:400;color:var(--muted);">(hanya angkanya, contoh: 1234567890123456)</span>
                     </label>
                     <input type="text" name="meta_pixel_id" class="form-control"
-                           value="{{ $settings['meta_pixel_id'] ?? '' }}"
-                           placeholder="1234567890123456">
+                        value="{{ $settings['meta_pixel_id'] ?? '' }}"
+                        placeholder="1234567890123456">
                     @if(!empty($settings['meta_pixel_id']))
-                        <div style="margin-top:6px;">
-                            <span class="badge badge-green">✓ Aktif</span>
-                            <span style="font-size:.72rem;color:var(--muted);margin-left:6px;">Pixel ID: {{ $settings['meta_pixel_id'] }}</span>
-                        </div>
+                    <div style="margin-top:6px;">
+                        <span class="badge badge-green">✓ Aktif</span>
+                        <span style="font-size:.72rem;color:var(--muted);margin-left:6px;">Pixel ID: {{ $settings['meta_pixel_id'] }}</span>
+                    </div>
                     @endif
                 </div>
 
@@ -198,13 +208,13 @@
                         <span style="font-weight:400;color:var(--muted);">(contoh: GTM-XXXXXXX)</span>
                     </label>
                     <input type="text" name="gtm_id" class="form-control"
-                           value="{{ $settings['gtm_id'] ?? '' }}"
-                           placeholder="GTM-XXXXXXX">
+                        value="{{ $settings['gtm_id'] ?? '' }}"
+                        placeholder="GTM-XXXXXXX">
                     @if(!empty($settings['gtm_id']))
-                        <div style="margin-top:6px;">
-                            <span class="badge badge-green">✓ Aktif</span>
-                            <span style="font-size:.72rem;color:var(--muted);margin-left:6px;">GTM ID: {{ $settings['gtm_id'] }}</span>
-                        </div>
+                    <div style="margin-top:6px;">
+                        <span class="badge badge-green">✓ Aktif</span>
+                        <span style="font-size:.72rem;color:var(--muted);margin-left:6px;">GTM ID: {{ $settings['gtm_id'] }}</span>
+                    </div>
                     @endif
                 </div>
 
@@ -220,7 +230,9 @@
     {{-- ===== TOKO ONLINE ===== --}}
     <div class="section-group" id="tab-toko">
         <div class="card">
-            <div class="card-header"><div class="card-title">🛒 Link Toko Online</div></div>
+            <div class="card-header">
+                <div class="card-title">🛒 Link Toko Online</div>
+            </div>
             <div class="card-body">
                 <div class="form-group">
                     <label class="form-label">URL Tokopedia</label>
@@ -234,6 +246,14 @@
                     <label class="form-label">URL TikTok Shop</label>
                     <input type="url" name="tiktok_url" class="form-control" value="{{ $settings['tiktok_url'] ?? '' }}">
                 </div>
+                <div class="form-group">
+                    <label class="form-label">📘 URL Facebook</label>
+                    <input type="url" name="facebook_url" class="form-control" value="{{ $settings['facebook_url'] ?? '' }}" placeholder="https://facebook.com/...">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">📷 URL Instagram</label>
+                    <input type="url" name="instagram_url" class="form-control" value="{{ $settings['instagram_url'] ?? '' }}" placeholder="https://instagram.com/...">
+                </div>
             </div>
         </div>
     </div>
@@ -245,16 +265,16 @@
 
 @push('scripts')
 <script>
-function switchTab(name, el) {
-    document.querySelectorAll('.section-group').forEach(g => g.classList.remove('active'));
-    document.querySelectorAll('.stab').forEach(b => b.classList.remove('active'));
-    document.getElementById('tab-' + name).classList.add('active');
-    el.classList.add('active');
-}
-// Auto-open pixel tab if hash in URL
-if(window.location.hash === '#tab-pixel') {
-    document.querySelector('[onclick*="pixel"]').click();
-}
+    function switchTab(name, el) {
+        document.querySelectorAll('.section-group').forEach(g => g.classList.remove('active'));
+        document.querySelectorAll('.stab').forEach(b => b.classList.remove('active'));
+        document.getElementById('tab-' + name).classList.add('active');
+        el.classList.add('active');
+    }
+    // Auto-open pixel tab if hash in URL
+    if (window.location.hash === '#tab-pixel') {
+        document.querySelector('[onclick*="pixel"]').click();
+    }
 </script>
 @endpush
 @endsection
